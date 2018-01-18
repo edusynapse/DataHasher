@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "dev-develop",
+        "bcosca/fatfree": "3.6"
+    }
+}

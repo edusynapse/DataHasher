@@ -1,0 +1,240 @@
+<div class="row">
+    <div class="twelve columns text-center"><br />
+	
+        <h3>Please add '#" at the end of the column name of the column to be hashed.</h3>
+        <h6>Empty cells in the columns marked for hashing will also be hashed.</h6>
+        <h6>MD5 hash is used to hash the column data.</h6>
+        <h6>Excel file should have single sheet.</h6>
+	<hr/>
+        <form method="POST" action="hash" enctype="multipart/form-data">
+                <div class="form-group">
+                        <input type="file" name="file" class="form-control" style="width:25%">
+                </div>
+                <div class="form-group">
+			<button type="submit" name="Submit" class="success button">Upload</button>
+                </div>
+        </form><hr/>
+        <h3>Example Input Sheet </h3>
+        <h4>Only xslx files should be uploaded.&nbsp&nbsp<a href="/demoinput.xlsx">Download Demo Input</a></h4>
+        <h6>Here we want the phone column to be hashed.</h6>
+<table>
+<tbody><tr>
+<td>name</td>
+<td>age</td>
+<td>phone</td>
+<td>address</td>
+<td>Renewal Status</td>
+</tr>
+<tr>
+<td>Dev Anand</td>
+<td>34</td>
+<td>9884823456</td>
+<td>21, Birbhum, West Bengal</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Harish Chandra</td>
+<td>43</td>
+<td>8764567999</td>
+<td>36, Haridwar, Uttarakhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Abhijeet Sengupta</td>
+<td>32</td>
+<td>9865433444</td>
+<td>a1/36, Jamshedpur, Jharkhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Raja Mallik</td>
+<td>23</td>
+<td>9856432567</td>
+<td>d2/45, Jallianwala Bach, Punjab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Madhuri Dixit</td>
+<td>21</td>
+<td>9823456543</td>
+<td>f3/46, Jabalpur, MP</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Salman Khan</td>
+<td>23</td>
+<td>9823156789</td>
+<td>g5/45, Jaipur, Rajasthan</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Sanjay Dutt</td>
+<td>34</td>
+<td>9812678334</td>
+<td>605, Mumbai, Maharashtra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Hero Hiralal</td>
+<td>66</td>
+<td>9873324455</td>
+<td>75/3-a, Bangalore, Karnataka</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Chatur Chaman</td>
+<td>25</td>
+<td>9800034567</td>
+<td>45/36s, Digboi, Assam</td>
+<td>no</td>
+</tr>
+</tbody></table>
+	<h4>So we add # to the phone column header.&nbsp&nbsp<a href="/demohashed.xlsx">Download Modified Demo</a></h4>
+<table>
+<tbody><tr>
+<td>name</td>
+<td>age</td>
+<td>phone#</td>
+<td>address</td>
+<td>Renewal Status</td>
+</tr>
+<tr>
+<td>Dev Anand</td>
+<td>34</td>
+<td>9884823456</td>
+<td>21, Birbhum, West Bengal</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Harish Chandra</td>
+<td>43</td>
+<td>8764567999</td>
+<td>36, Haridwar, Uttarakhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Abhijeet Sengupta</td>
+<td>32</td>
+<td>9865433444</td>
+<td>a1/36, Jamshedpur, Jharkhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Raja Mallik</td>
+<td>23</td>
+<td>9856432567</td>
+<td>d2/45, Jallianwala Bach, Punjab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Madhuri Dixit</td>
+<td>21</td>
+<td>9823456543</td>
+<td>f3/46, Jabalpur, MP</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Salman Khan</td>
+<td>23</td>
+<td>9823156789</td>
+<td>g5/45, Jaipur, Rajasthan</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Sanjay Dutt</td>
+<td>34</td>
+<td>9812678334</td>
+<td>605, Mumbai, Maharashtra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Hero Hiralal</td>
+<td>66</td>
+<td>9873324455</td>
+<td>75/3-a, Bangalore, Karnataka</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Chatur Chaman</td>
+<td>25</td>
+<td>9800034567</td>
+<td>45/36s, Digboi, Assam</td>
+<td>no</td>
+</tr>
+</tbody></table>
+<h4>Now upload the xlsx file in the form above.</h4>
+<h4>After processing it becomes.&nbsp&nbsp<a href="/demooutput.xlsx">Download Demo Result</a></h4>
+<table>
+<tbody><tr>
+<td>name</td>
+<td>age</td>
+<td>phone#</td>
+<td>address</td>
+<td>Renewal Status</td>
+</tr>
+<tr>
+<td>Dev Anand</td>
+<td>34</td>
+<td>290998b56dd9477a24dfd33d913ab360</td>
+<td>21, Birbhum, West Bengal</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Harish Chandra</td>
+<td>43</td>
+<td>7c17beea13dec25b8b2e56f0f8061e47</td>
+<td>36, Haridwar, Uttarakhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Abhijeet Sengupta</td>
+<td>32</td>
+<td>f60f5959721e70332c828e1d31318a23</td>
+<td>a1/36, Jamshedpur, Jharkhand</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Raja Mallik</td>
+<td>23</td>
+<td>842a946de923f0b81e1754ddc5de89c4</td>
+<td>d2/45, Jallianwala Bach, Punjab</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Madhuri Dixit</td>
+<td>21</td>
+<td>96010da309983d8d5468d5eeb408276c</td>
+<td>f3/46, Jabalpur, MP</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Salman Khan</td>
+<td>23</td>
+<td>24a5609458935b38d1ace8f7dd68361e</td>
+<td>g5/45, Jaipur, Rajasthan</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Sanjay Dutt</td>
+<td>34</td>
+<td>2a7404ad9b7cc707f0c633d9c0cdf047</td>
+<td>605, Mumbai, Maharashtra</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Hero Hiralal</td>
+<td>66</td>
+<td>6f3f31efff9faef63dd2f3185f0a6c8d</td>
+<td>75/3-a, Bangalore, Karnataka</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Chatur Chaman</td>
+<td>25</td>
+<td>42c66d18fe1c659fdea54f90db1f2c97</td>
+<td>45/36s, Digboi, Assam</td>
+<td>no</td>
+</tr>
+</tbody></table>
+    </div>
+</div>

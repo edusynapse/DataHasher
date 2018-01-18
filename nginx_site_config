@@ -1,0 +1,41 @@
+server {
+	listen 443 ssl default_server;
+	listen [::]:443 ssl default_server;
+
+	server_name datahasher.amhi.in;
+	ssl    on;
+	ssl_certificate    /home/ubuntu/ssl/wildcard.amhi.in.crt;
+	ssl_certificate_key    /home/ubuntu/ssl/wildcard.amhi.in.key;
+	
+	root /var/www/html;
+
+	index index.php index.html index.htm index.nginx-debian.html;
+
+	access_log /var/log/nginx/datahasher.access.log;
+	error_log /var/log/nginx/datahasher.error.log;
+	
+	location ~* \.(xslx)$ {
+   		root /var/www/html/;
+ 	}
+
+	location / {
+		if (!-f $request_filename) {
+		        rewrite ^(.+)$ /index.php last;
+		        break;
+            	}
+		try_files $uri $uri/ =404;
+	}
+
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+		#fastcgi_index index.php;
+        	fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	}
+
+
+	location ~ /\.ht {
+		deny all;
+	}
+}
+
